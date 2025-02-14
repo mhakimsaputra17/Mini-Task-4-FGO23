@@ -1,5 +1,7 @@
 const movie = {
+
     id: 1,
+
     title: "Solo Leveling",
     image: "https://downloaddisiniuiii.com/gambar.png",
     genre: ["Action", "Adventure", "Fantasy"],
@@ -22,7 +24,12 @@ const movie = {
         console.log("Genre", this.genre);
     },
     getCast: function() {
-        console.log(this.cast);
+        //console.log(this.cast);
+        console.log(this.cast.sort((a, b) => {
+          if(a.name <b.name) return -1;
+          if(a.name >b.name) return 1;
+          return 0;
+        }))
     },
     setTitle: function(newTitle) {
         if (typeof newTitle !== "string") return;
@@ -37,6 +44,7 @@ const movie = {
 }
 
 movie.getTitleImageAndGenre();
+// sort by by cast name 
 movie.getCast();
 movie.setTitle("Overlord");
 movie.setImage("https://gambar-random.com");
